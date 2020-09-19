@@ -11,11 +11,10 @@ public class Application {
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        SpeakerServiceImpl speakerService = new SpeakerServiceImpl();
+        SpeakerService speakerService = applicationContext.getBean("speakerService", SpeakerServiceImpl.class);
         // speakerService.setSpeakerRepository(new HibernateSpeakerRepositoryImpl());
-
-        System.out.println(applicationContext.getBean("speakerRepository", SpeakerRepository.class));
-//        System.out.println(speakerService.findAll().get(0).getFirstname());
+//        System.out.println(applicationContext.getBean("speakerRepository", SpeakerRepository.class));
+        System.out.println(speakerService.findAll().get(0).getFirstname());
 
     }
 }
