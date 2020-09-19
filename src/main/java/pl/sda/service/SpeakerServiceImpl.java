@@ -8,12 +8,15 @@ import java.util.List;
 
 public class SpeakerServiceImpl implements SpeakerService {
 
-    private HibernateSpeakerRepositoryImpl speakerRepository;
+//    private HibernateSpeakerRepositoryImpl speakerRepository;
+    private SpeakerRepository speakerRepository;
+
 
     public SpeakerServiceImpl() {
     }
 
-    public SpeakerServiceImpl(HibernateSpeakerRepositoryImpl speakerRepository) {
+    public SpeakerServiceImpl(SpeakerRepository speakerRepository) {
+        System.out.println("constructor");
         this.speakerRepository = speakerRepository;
     }
 
@@ -22,7 +25,7 @@ public class SpeakerServiceImpl implements SpeakerService {
         return speakerRepository.finalAll();
     }
 
-    public void setSpeakerRepository(HibernateSpeakerRepositoryImpl speakerRepository) {
+    public void setSpeakerRepository(SpeakerRepository speakerRepository) {
         this.speakerRepository = speakerRepository;
     }
 }
